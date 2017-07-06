@@ -10,6 +10,17 @@
 
 	Make the Title twice as large as the body text, bold, and give it some nice margin.
 */
+body {
+	font-family: 'Proza Libre', sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	background-color: #fff;
+}
+
+h1 {
+	font-size: 32px;
+	font-weight: 700px;
+}
 
 /*-------- Main Styles --------*/
 
@@ -20,6 +31,17 @@
 
 	Every container, form, input, and button should have rounded corners.
 */
+#main {
+	width: 100%;
+}
+
+.container {
+	float: left;
+	max-width: 500px;
+	border-radius: 5px;
+	padding: 25px;
+	margin: 25px;
+}
 
 /*-------- Form Styles --------*/
 
@@ -55,6 +77,97 @@
 	
 */
 
+.formSection {
+	background-color: #E3E6EC;
+}
+
+/*
+.row {
+}
+*/
+
+.formGroup {
+	width: 100%;
+	display: inline-block;
+}
+
+/*
+.check {
+}
+
+.checkboxes {
+}
+
+.radio {
+	
+}
+
+.radioButtons {
+
+}
+*/
+
+#mission {
+	width: 100%;
+	height: 100px;
+	border: 1px #ccc;
+	border-radius: 5px;
+	font-size: inherit;
+	margin-bottom: 30px;
+}
+
+label.formGroup {
+	padding: 10px;
+}
+
+select {
+	width: 100%;
+	height: 48px;
+	margin-bottom: 30px;
+	border: 1px #ccc;
+	border-radius: 5px;
+	font-size: inherit;
+}
+
+input {
+	width: 100%;
+	height: 48px;
+	margin-bottom: 30px;
+	font-size: inherit;
+}
+
+input[type=text] {
+	border: 1px #ccc;
+	border-radius: 5px;
+}
+
+input[type=radio] {
+	width: 30px;
+	height: 13px;
+	text-indent: 10px;
+}
+
+input[type=checkbox] {
+	width: 30px;
+	height: 15px;
+	text-indent: 10px;
+}
+
+input[type=submit] {
+	background-color: rgba(39,208,127,.5);
+	border: none;
+	border-radius: 5px;
+	height: 48px;
+	width: 96px;
+	padding: 14px;
+	float: right;
+	font-size: 16px;
+	font-weight: 700;
+}
+
+input[type=submit]:hover {
+	background-color: rgba(39,208,127,1);
+}
 
 /*-------- Results Styles --------*/
 
@@ -66,4 +179,9 @@
 	The results container should have a background color of #C8DBB3, and comfortable padding around the text.
 
 */
+
+.results {
+	width: 100%;
+	background-color: #C8DBB3;
+}
 

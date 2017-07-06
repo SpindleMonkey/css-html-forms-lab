@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>CSS HTML Forms Lab</title>
+	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -34,7 +35,7 @@
 				    	</select>
 					</div>
 					<div class="row formGroup">
-				    	<label for="mission">Misison Statement:</label>
+				    	<label for="mission">Mission Statement:</label>
 				    	<textarea id="mission" name="mission"></textarea>
 					</div>
 
@@ -111,24 +112,43 @@
 		$("form").on("submit", function(event){
 
 		    // Stop the form from submitting
+		    event.preventDefault();
 
 	    	// Run the 'makeResults' function seen above
+	    	makeResults();
 
 	    	/*
-			
 				For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
+				*/
 
-				"Once upon a time there was a Developer named NAME."
+				var results = $('.results');
+				var $name = $('#name').val();
+				var $verb1 = $('#verb-1').val();
+				var $mission = $('#mission').val();
+				var $sentiment1 = $('input[name=sentiment]:checked', '.form').val();
+				var $noun1 = $('#noun-1').val();
+				var $noun2 = $('#noun-2').val();
 
-				"NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
+				var sentimentList = [];
+				var $sentiment2 = $('input[name=adjective-2]:checked').each(function() {
+					sentimentList.push(this.value);
+				});
 
-				""MISSION", NAME shouted."
+				//"Once upon a time there was a Developer named NAME."
+				$('.results').append('<p>').append("Once upon a time there was a Developer named " + $name + ".");
+
+				//"NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
+				$('.results').append('<p>').append($name + " came to General Assembly to " + $verb1 + " the great mountain of programming knowledge.");
+
+				//""MISSION", NAME shouted."
+				$('.results').append('<p>').append('"' + $mission + '", ' + $name + ' shouted.');
 	
-				"Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."
+				//"Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."
+				$('.results').append('<p>').append("Though " + $sentiment1 + ", " + $name + " was able to overcome all obstacles with the power of their " + $noun1 + ".");
 
-				"In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
+				//"In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
+				$('.results').append('<p>').append("In the end, their success can be contributed entirely to their " + sentimentList.join(", ") + " " + $noun2 + ".");
 
-	    	*/ 
 		});
 	</script>
 
